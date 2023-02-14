@@ -6,7 +6,7 @@ import os, subprocess
 #-- Мои библиотеки--
 from detals import cpicok
 
-bot = telebot.TeleBot('6212415386:AAGTkDPFgrFlBToaysUdvOEMBIuQj24T8AA')
+bot = telebot.TeleBot('---------------------')
 print("Бот запущен!")
 file = open('detals.txt','r')
 bank_file = open('bank.txt','r')
