@@ -8,7 +8,9 @@ import os, subprocess
 #-- Мои библиотеки--
 from detals import cpicok
 
-bot = telebot.TeleBot('----')
+write(Name)
+read(//)
+bot = telebot.TeleBot('6212415386:AAGTkDPFgrFlBToaysUdvOEMBIuQj24T8AA')
 '''
  Список всех пользователей
  Счет деталей
@@ -23,7 +25,6 @@ cur.execute("""CREATE TABLE IF NOT EXISTS users(
    username TEXT,
    fname TEXT,
    grupa TEXT,
-   age INT,
    Competence TEXT,
    Coptercoin INT,
    last_action TEXT,
@@ -42,6 +43,7 @@ file = open('detals.txt','r')
 bank_file = open('bank.txt','r')
 CopterCoin = 0
 kvest = 0
+step = 0
 
 def Rewriting(Action):
     user = (message.id, message.from_user.username, message, "-", "-", 0, "-", 0, "regestration", 1 )
@@ -89,7 +91,7 @@ def comands(message):
 
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
-    global kvest,CopterCoin,i,step
+    global kvest,CopterCoin,i, step
     if message.text == "🌎 Регистрация":
         name = str(message.from_user.first_name)
         markup = types.InlineKeyboardMarkup()
@@ -135,9 +137,9 @@ def get_text_messages(message):
         bot.send_message(message.from_user.id, "Напиши привет")
 
     elif step == 1:
-        cur.execute("DELETE FROM users WHERE userid='" + message.id + "';")
+        cur.execute("DELETE FROM users WHERE userid='" + str(message.id) + "';")
         user = (message.id, message.from_user.username, message, "-", "-", 0, "-", 0, "regestration", 1 )
-        cur.execute("INSERT INTO users VALUES(?, ?, ?, ?, ?, ?, ?);", user)
+        cur.execute("INSERT INTO users VALUES(?, ?, ?, ?, ?, ?);", user)
         step = 2
 
 
