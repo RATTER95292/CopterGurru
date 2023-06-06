@@ -8,8 +8,6 @@ import os, subprocess
 #-- Мои библиотеки--
 from detals import cpicok
 
-write(Name)
-read(//)
 bot = telebot.TeleBot('6212415386:AAGTkDPFgrFlBToaysUdvOEMBIuQj24T8AA')
 '''
  Список всех пользователей
@@ -25,6 +23,7 @@ cur.execute("""CREATE TABLE IF NOT EXISTS users(
    username TEXT,
    fname TEXT,
    grupa TEXT,
+   age INT,
    Competence TEXT,
    Coptercoin INT,
    last_action TEXT,
